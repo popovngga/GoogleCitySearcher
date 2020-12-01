@@ -16,3 +16,5 @@
 $router->post('locations/search', 'SearchController@search');
 $router->get('addresses', 'AddressController@getAll');
 $router->get('addresses/{id}', 'AddressController@getAddressById');
+$router->get('cities', 'CityController@index');
+$router->get('regions', 'RegionController@index');
