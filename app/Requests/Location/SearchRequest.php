@@ -11,8 +11,8 @@ class SearchRequest extends BaseRequest
     public function __construct(Request $request)
     {
         $validator = \Validator::make($request->all(), [
-            'title' => 'required|max:255',
-            'body' => 'required',
+            'longitude' => 'required|numeric|between:-180.000000,180.000000',
+            'latitude'  => 'required|numeric|between:-90.000000,90.000000',
         ]);
         parent::__construct($request, $validator);
     }

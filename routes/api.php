@@ -13,14 +13,6 @@
 |
 */
 
-$router->group(['prefix' => 'locations'], function () use ($router){
-    $router->get('/search', 'SearchController@search');
-});
-
-$router->group(['prefix' => 'cities'], function () {
-
-});
-
-$router->group(['prefix' => 'regions'], function () {
-
-});
+$router->post('locations/search', 'SearchController@search');
+$router->get('addresses', 'AddressController@getAll');
+$router->get('addresses/{id}', 'AddressController@getAddressById');

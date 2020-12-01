@@ -44,6 +44,11 @@ $app->singleton(
 );
 
 $app->singleton(
+    \App\Helpers\Services\LocationServiceInterface::class,
+    \App\Helpers\Services\LocationBuilder::class
+);
+
+$app->singleton(
     Illuminate\Contracts\Console\Kernel::class,
     App\Console\Kernel::class
 );

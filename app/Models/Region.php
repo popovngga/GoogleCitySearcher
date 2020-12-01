@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 class Region extends Model
 {
     protected $guarded = [];
+    public $timestamps = false;
 
     public function location(): hasOne
     {

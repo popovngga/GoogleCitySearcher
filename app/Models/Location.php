@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Location extends Model
 {
     protected $guarded = [];
+    public $timestamps = false;
 
     public function city(): belongsTo
     {
@@ -17,5 +18,10 @@ class Location extends Model
     public function region(): belongsTo
     {
         return $this->belongsTo(Region::class);
+    }
+
+    public function getAddressAttribute()
+    {
+        return $this->region->name . ", " .$this->city->name;
     }
 }
